@@ -1,0 +1,29 @@
+--- Makefile-pp	2020-11-16 22:25:06.246781122 +0100
++++ Makefile	2020-11-16 22:25:35.280860778 +0100
+@@ -160,8 +160,6 @@
+ 		sipQtGuiQOpenGLTexture.cpp \
+ 		sipQtGuiQOpenGLTextureBlitter.cpp \
+ 		sipQtGuiQOpenGLTextureFeatures.cpp \
+-		sipQtGuiQOpenGLTimeMonitor.cpp \
+-		sipQtGuiQOpenGLTimerQuery.cpp \
+ 		sipQtGuiQOpenGLVersionProfile.cpp \
+ 		sipQtGuiQOpenGLVertexArrayObject.cpp \
+ 		sipQtGuiQOpenGLVertexArrayObjectBinder.cpp \
+@@ -414,8 +412,6 @@
+ 		sipQtGuiQOpenGLTexture.o \
+ 		sipQtGuiQOpenGLTextureBlitter.o \
+ 		sipQtGuiQOpenGLTextureFeatures.o \
+-		sipQtGuiQOpenGLTimeMonitor.o \
+-		sipQtGuiQOpenGLTimerQuery.o \
+ 		sipQtGuiQOpenGLVersionProfile.o \
+ 		sipQtGuiQOpenGLVertexArrayObject.o \
+ 		sipQtGuiQOpenGLVertexArrayObjectBinder.o \
+@@ -788,8 +784,6 @@
+ 		sipQtGuiQOpenGLTexture.cpp \
+ 		sipQtGuiQOpenGLTextureBlitter.cpp \
+ 		sipQtGuiQOpenGLTextureFeatures.cpp \
+-		sipQtGuiQOpenGLTimeMonitor.cpp \
+-		sipQtGuiQOpenGLTimerQuery.cpp \
+ 		sipQtGuiQOpenGLVersionProfile.cpp \
+ 		sipQtGuiQOpenGLVertexArrayObject.cpp \
+ 		sipQtGuiQOpenGLVertexArrayObjectBinder.cpp \

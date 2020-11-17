@@ -1,0 +1,20 @@
+--- configure-pp.py	2020-11-15 22:29:27.834983605 +0100
++++ configure.py	2020-11-15 22:36:23.305068292 +0100
+@@ -2168,7 +2168,7 @@
+         args.append(makefile_target)
+ 
+     run_command(' '.join(args), verbose)
+-
++    return platform_exe+".wasm"
+     return platform_exe if os.access(platform_exe, os.X_OK) else None
+ 
+ 
+@@ -2452,7 +2452,7 @@
+     the name of the PyQt module being tested.  test is the name of the test
+     executable.  verbose is set if the output is to be displayed.
+     """
+-
++    return [""]
+     out_file = 'cfgtest_' + mname + '.out'
+ 
+     # Create the output file, first making sure it doesn't exist.

@@ -1,0 +1,42 @@
+--- build/console.html-pp	2020-11-16 19:24:26.887487949 +0100
++++ build/console.html	2020-11-16 19:31:44.831630058 +0100
+@@ -6,9 +6,10 @@
+     <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+     <link href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css" rel="stylesheet"/>
+     <link href="renderedhtml.css" rel="stylesheet"/>
+-    <script src="./pyodide_dev.js"></script>
+   </head>
+   <body>
++    <canvas id="qtcanvas" oncontextmenu="event.preventDefault()" contenteditable="true" width="600" height="300" style="border: 1px solid red"></canvas>
++    <script src="./pyodide_dev.js"></script>
+     <script>
+       languagePluginLoader.then(() => {
+         function pushCode(line) {
+@@ -22,7 +23,7 @@
+             prompt: "[[;red;]>>> ]"
+           }
+         );
+-
++        Module = pyodide["_module"];  // Provide global Module variable
+         window.term = term;
+         pyodide.runPython(`
+           import io, code, sys
+
+--- build/pyodide_dev.js-pp     2020-11-16 19:27:35.814972265 +0100
++++ build/pyodide_dev.js        2020-11-16 19:31:58.022667268 +0100
+@@ -323,12 +323,15 @@
+   // Loading Pyodide
+   let wasmURL = `${baseURL}pyodide.asm.wasm`;
+   let Module = {};
++  let canvas = document.querySelector('#qtcanvas');
+   self.Module = Module;
+ 
+   Module.noImageDecoding = true;
+   Module.noAudioDecoding = true;
+   Module.noWasmDecoding = true;
+   Module.preloadedWasm = {};
++  Module.canvasElements = [canvas];
++  Module.qtCanvasElements = [canvas];
+   let isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+ 
+   let wasm_promise, wasm_fetch = fetch(wasmURL);
