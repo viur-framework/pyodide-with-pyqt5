@@ -3,7 +3,7 @@ This repo contains a shell script to build pyodide with PyQt5. Can be used to po
 How to build:
 .............
 
-  - Ensure to have all build-dependencies for Pyodide and Qt5 installed, as well as git, wget, sed and > 10GB of free space
+  - Ensure to have all build-dependencies for Pyodide and Qt5 installed, as well as git, sed,libffi-devel, gcc-gfortran, f2c, python38, uglify-js and > 10GB of free space
   - Clone or download the repo
   - Exec ./build.sh and grab a beer...
 
@@ -20,3 +20,5 @@ The package PyQt5 should be importable as usual. The only exception is QtWidgets
 Known issues:
 .............
 When using the interactive shell, graphical updates may not be visible unless you emit some events to Qt (like moving the cursor over the canvas). Force a repaint with "qtApp.processEvents()".
+
+
